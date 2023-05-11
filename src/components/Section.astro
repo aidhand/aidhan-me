@@ -1,0 +1,17 @@
+---
+export interface Props {
+  title: string;
+  slug: string;
+}
+
+const { title, slug } = Astro.props;
+---
+
+<section class="my-24" id={slug}>
+  <h2 class="text-xl font-semibold italic inline-block lowercase">
+    <a href={"#" + slug}>{title}</a>
+  </h2>
+  <div class="mx-2 my-12">
+    <slot />
+  </div>
+</section>

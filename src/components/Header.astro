@@ -1,0 +1,31 @@
+---
+export interface Props {
+  title: string;
+  subtitle: string;
+}
+
+const { title, subtitle } = Astro.props;
+---
+
+<header class="px-4 py-48 bg-slate-200 text-slate-700">
+  <div class="container mx-auto flex justify-around items-center">
+    <div class="text-left">
+      <a href="/" class="hover:no-underline hover:text-slate-600">
+        <h1 class="text-5xl sans font-bold tracking-tighter">
+          {title}
+        </h1>
+      </a>
+      <p class="text-2xl serif italic">
+        {subtitle}
+      </p>
+    </div>
+    <nav class="lowercase">
+      <ul class="text-lg serif text-right">
+        <li><a href="/work">My work</a></li>
+        <li><a href="/projects">Projects</a></li>
+        <li><a href="/resume">Resume</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>

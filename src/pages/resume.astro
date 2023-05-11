@@ -1,0 +1,21 @@
+---
+import Section from "../components/Section.astro";
+import Layout from "../layouts/Layout.astro";
+
+export let metadata = {
+  title: "Resume",
+  slug: "resume",
+};
+---
+
+<Layout title={metadata.title}>
+  <main class="container mx-auto p-4 serif">
+    <Section slug={metadata.slug} title={metadata.title}>
+      <div class="mx-2 my-12">
+        <article>
+          <h3>topic</h3>
+        </article>
+      </div>
+    </Section>
+  </main>
+</Layout>

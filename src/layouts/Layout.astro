@@ -1,0 +1,73 @@
+---
+import Header from "../components/Header.astro";
+
+export interface Props {
+  title?: string;
+}
+
+let site = {
+  title: "Aidhan Dossel",
+  subtitle: "Developer, designer with a passion for the web.",
+};
+
+let page = {
+  title: `${site.title} - ${site.subtitle}`,
+};
+
+const { title } = Astro.props;
+
+if (title) {
+  page.title = `${title} - ${site.title}`;
+}
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;700&family=Inter:wght@400;500;600;700;800&family=Source+Serif+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{page.title}</title>
+  </head>
+  <body class="bg-slate-100 text-slate-600">
+    <Header title={site.title} subtitle={site.subtitle} />
+    <slot />
+  </body>
+</html>
+<style lang="scss" is:global>
+  :root {
+    /* Add some hectic variables here */
+
+    --font-serif: "Source Serif Pro", serif;
+    --font-sans: "Inter", sans-serif;
+    --font-mono: "Fira Mono", monospace;
+  }
+
+  .serif {
+    font-family: var(--font-serif);
+  }
+
+  .sans {
+    font-family: var(--font-sans);
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+  }
+
+  body {
+    font-family: var(--font-sans);
+  }
+
+  a:hover {
+    @apply underline underline-offset-2;
+  }
+</style>
