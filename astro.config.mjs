@@ -1,7 +1,6 @@
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
-import vercel from "@astrojs/vercel/edge";
-//import cloudflare from "@astrojs/cloudflare";
+import cloudflare from "@astrojs/cloudflare";
 
 import tailwind from "@astrojs/tailwind";
 
@@ -9,5 +8,6 @@ import tailwind from "@astrojs/tailwind";
 export default defineConfig({
   integrations: [preact(), tailwind()],
   output: "server",
-  adapter: vercel()
+  //adapter: vercel(),
+  adapter: cloudflare(),
 });
