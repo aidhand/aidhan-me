@@ -1,7 +1,7 @@
 import { defineConfig } from "astro/config";
 import preact from "@astrojs/preact";
 import cloudflare from "@astrojs/cloudflare";
-import vercel from "@astrojs/vercel";
+import vercel from "@astrojs/vercel/edge";
 import tailwind from "@astrojs/tailwind";
 
 let adapter = vercel();
